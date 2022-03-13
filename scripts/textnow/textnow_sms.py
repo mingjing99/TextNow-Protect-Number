@@ -187,6 +187,11 @@ class Textnow:
     driver = self.getDriver();
     
     if self.login(driver):
+      
+      #检测jQuery是否存在，如果不存在，则手动加载一次
+      driver.execute_script("if(!window.jQuery){var scriptEle=document.createElement('script');scriptEle.src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js';document.body.append(scriptEle)}")
+      #driver.execute_script("if(!window.jQuery){var scriptEle=document.createElement('script');scriptEle.src='https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js';document.body.append(scriptEle)}")
+      time.sleep(3)
 
       # remove通知提示框
       driver.execute_script("document.querySelectorAll('#recent-header .toast-container').forEach(function(e,i){console.log(e.href)})")
