@@ -199,7 +199,7 @@ class Textnow:
       driver.execute_script("if(!window.jQuery){var scriptEle=document.createElement('script');scriptEle.src='https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js';document.body.append(scriptEle)}")
       time.sleep(3)
       
-      driver.execute_script("$('#recent-header .toast-container').remove();")
+      #driver.execute_script("$('#recent-header .toast-container').remove();")
       driver.execute_script("$('.notification-priming-modal').remove();")
       driver.execute_script("$('.modal').remove();")
       time.sleep(2)
