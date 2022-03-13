@@ -196,12 +196,13 @@ class Textnow:
       time.sleep(1)
       
       #检测jQuery是否存在，如果不存在，则手动加载一次
-      driver.execute_script("if(!window.jQuery){var scriptEle=document.createElement('script');scriptEle.src='https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js';document.body.append(scriptEle)}")
+      driver.execute_script("if(!window.jQuery){var scriptEle=document.createElement('script');scriptEle.src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js';document.body.append(scriptEle)}")
+      #driver.execute_script("if(!window.jQuery){var scriptEle=document.createElement('script');scriptEle.src='https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js';document.body.append(scriptEle)}")
       time.sleep(3)
       
-      #driver.execute_script("$('#recent-header .toast-container').remove();")
-      #driver.execute_script("$('.notification-priming-modal').remove();")
-      #driver.execute_script("$('.modal').remove();")
+      driver.execute_script("$('#recent-header .toast-container').remove();")
+      driver.execute_script("$('.notification-priming-modal').remove();")
+      driver.execute_script("$('.modal').remove();")
       time.sleep(2)
       
       for phone in self.PHONE_NUMBER.split(','):
